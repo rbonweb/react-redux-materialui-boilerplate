@@ -3,12 +3,12 @@ import React, { useContext, useState } from "react";
 const themes = {
   light: {
     foreground: "#000000",
-    background: "#eeeeee"
+    background: "#eeeeee",
   },
   dark: {
     foreground: "#ffffff",
-    background: "blue"
-  }
+    background: "blue",
+  },
 };
 
 const ThemeContext = React.createContext();
@@ -20,15 +20,17 @@ export default function Tester() {
   const changeTheme = () => {
     setThemeData(themes.light);
     setAuth(1);
-  }
+  };
 
   const revertTheme = () => {
     setThemeData(themes.dark);
     setAuth(0);
-  }
+  };
 
   return (
-    <ThemeContext.Provider value={{ themeData, auth, changeTheme, revertTheme }}>
+    <ThemeContext.Provider
+      value={{ themeData, auth, changeTheme, revertTheme }}
+    >
       <Toolbar />
     </ThemeContext.Provider>
   );
@@ -46,10 +48,22 @@ function ThemedButton() {
   const theme = useContext(ThemeContext);
   return (
     <>
-      <button onClick={theme.changeTheme} style={{ background: theme.themeData.background, color: theme.themeData.foreground }}>
+      <button
+        onClick={theme.changeTheme}
+        style={{
+          background: theme.themeData.background,
+          color: theme.themeData.foreground,
+        }}
+      >
         I am styled by theme context!
       </button>
-      <button onClick={theme.revertTheme} style={{ background: theme.themeData.background, color: theme.themeData.foreground }}>
+      <button
+        onClick={theme.revertTheme}
+        style={{
+          background: theme.themeData.background,
+          color: theme.themeData.foreground,
+        }}
+      >
         I am styled by theme context!
       </button>
       {theme.auth ? "Yes" : "No"}

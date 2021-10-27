@@ -1,14 +1,14 @@
-import { createTheme } from '@mui/material/styles';
+import { createTheme } from "@mui/material/styles";
 
 // A custom theme for this app
 const theme = createTheme({
   palette: {
-    type: 'light',
+    type: "light",
     primary: {
-      main: '#3f51b5',
+      main: "#3f51b5",
     },
     secondary: {
-      main: '#f50057',
+      main: "#f50057",
     },
   },
   typography: {
