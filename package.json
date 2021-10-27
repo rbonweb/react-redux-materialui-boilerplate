@@ -11,15 +11,19 @@
   "dependencies": {
     "@emotion/react": "latest",
     "@emotion/styled": "latest",
+    "@mui/icons-material": "^5.0.5",
     "@mui/material": "latest",
     "@reduxjs/toolkit": "^1.6.2",
+    "formik": "^2.2.9",
     "history": "^5.0.1",
     "prop-types": "^15.7.2",
     "react": "latest",
     "react-dom": "latest",
+    "react-helmet": "^6.1.0",
     "react-redux": "^7.2.6",
     "react-router-dom": "^6.0.0-beta.8",
-    "react-scripts": "latest"
+    "react-scripts": "latest",
+    "yup": "^0.32.11"
   },
   "browserslist": {
     "production": [
@@ -34,6 +38,7 @@
     ]
   },
   "devDependencies": {
+    "eslint-plugin-react": "^7.26.1",
     "redux-devtools": "^3.7.0"
   }
 }

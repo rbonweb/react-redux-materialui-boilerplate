@@ -1,5 +1,9 @@
+import React from 'react';
+import { lazy } from 'react';
 import MinimalLayout from '../layouts/MinimalLayout';
-import Tester from '../Tester';
+import Loadable from '../components/common/Loadable';
+
+const SignIn = Loadable(lazy(() => import('../components/SingIn')));
 
 // ==============================|| AUTHENTICATION ROUTING ||============================== //
 
@@ -8,8 +12,8 @@ const AuthenticationRoutes = {
     element: <MinimalLayout />,
     children: [
         {
-            path: '/login',
-            element: <Tester />
+            path: '/signin',
+            element: <SignIn />
         },
     ]
 };

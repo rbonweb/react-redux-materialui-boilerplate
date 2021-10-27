@@ -11,7 +11,7 @@ const themes = {
   }
 };
 
-const ThemeContext = React.createContext(themes.light);
+const ThemeContext = React.createContext();
 
 export default function Tester() {
   const [themeData, setThemeData] = useState(themes.dark);
@@ -34,7 +34,7 @@ export default function Tester() {
   );
 }
 
-function Toolbar(props) {
+function Toolbar() {
   return (
     <div>
       <ThemedButton />

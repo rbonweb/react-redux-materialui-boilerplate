@@ -1,3 +1,4 @@
+import React from 'react';
 import MainLayout from '../layouts/MainLayout';
 import Tester from '../Tester';
 
