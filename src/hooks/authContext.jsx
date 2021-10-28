@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 export const authContext = React.createContext();
 
 const AuthProvider = ({ children }) => {
-  const [authenticated, setAuthenticated] = useState(true);
+  const [authenticated, setAuthenticated] = useState(false);
 
   const login = () => {
     setAuthenticated(true);
@@ -22,7 +22,7 @@ const AuthProvider = ({ children }) => {
 };
 
 AuthProvider.propTypes = {
-  children: PropTypes.func,
+  children: PropTypes.object,
 };
 
 export default AuthProvider;
