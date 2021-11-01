@@ -10,6 +10,9 @@ export default function Welcome() {
         <Typography align="center" variant="h3" component="h2">
           Welcome
         </Typography>
+        <Typography align="center" variant="h6" component="h2">
+          Inherited from Mail Layout
+        </Typography>
       </Container>
     </>
   );

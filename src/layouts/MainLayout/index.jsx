@@ -5,7 +5,6 @@ const MainLayout = () => {
   return (
     <>
       <Outlet />
-      <p>Main</p>
     </>
   );
 };
