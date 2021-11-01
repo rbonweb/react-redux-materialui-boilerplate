@@ -3,6 +3,7 @@ import { CssBaseline, StyledEngineProvider } from "@mui/material";
 import * as React from "react";
 import Routes from "./routes";
 import theme from "./theme";
+import "./style.css";
 
 export default function App() {
   return (

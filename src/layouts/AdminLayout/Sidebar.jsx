@@ -1,7 +1,62 @@
+/* eslint-disable react/prop-types */
 import React from "react";
-import { Divider, List, ListItem, ListItemText, Toolbar } from "@mui/material";
+import { useNavigate } from "react-router-dom";
+import {
+  Collapse,
+  Divider,
+  List,
+  ListItemButton,
+  ListItemText,
+  Toolbar,
+} from "@mui/material";
+import AdminSideBarRoutes from "../../routes/AuthenticatedRoutes/AdminSideBarRoutes";
+import { ExpandLess, ExpandMore } from "@mui/icons-material";
+
+const CollapsedList = ({ item, selectedIndex, handleListItemClick }) => {
+  let navigate = useNavigate();
+  const [open, setOpen] = React.useState(false);
+
+  const handleClick = () => {
+    setOpen(!open);
+  };
+
+  return (
+    <React.Fragment>
+      <ListItemButton onClick={handleClick}>
+        <ListItemText primary={item.name} />
+        {open ? <ExpandLess /> : <ExpandMore />}
+      </ListItemButton>
+      <Collapse in={open} timeout="auto" unmountOnExit>
+        <List component="div" disablePadding>
+          {item.children.map((item) => {
+            return (
+              <ListItemButton
+                key={item.path}
+                selected={selectedIndex === item.path}
+                onClick={(event) => {
+                  navigate(item.path);
+                  handleListItemClick(event, item.path);
+                }}
+                sx={{ pl: 10 }}
+              >
+                <ListItemText primary={item.name} />
+              </ListItemButton>
+            );
+          })}
+        </List>
+      </Collapse>
+    </React.Fragment>
+  );
+};
 
 const Sidebar = () => {
+  let navigate = useNavigate();
+  const [selectedIndex, setSelectedIndex] = React.useState(1);
+
+  const handleListItemClick = (event, index) => {
+    setSelectedIndex(index);
+  };
+
   return (
     <div>
       <Toolbar
@@ -10,10 +65,27 @@ const Sidebar = () => {
         <img src="https://dummyimage.com/200x50/3f51b5/fff" alt="Logo" />
       </Toolbar>
       <Divider />
-      <List>
-        <ListItem button key="dashboard">
-          <ListItemText primary="Dashboard" />
-        </ListItem>
+      <List component="nav">
+        {AdminSideBarRoutes.children.map((item) => {
+          return item.children ? (
+            <CollapsedList
+              item={item}
+              selectedIndex={selectedIndex}
+              handleListItemClick={handleListItemClick}
+            />
+          ) : (
+            <ListItemButton
+              key={item.path}
+              selected={selectedIndex === item.path}
+              onClick={(event) => {
+                navigate(item.path);
+                handleListItemClick(event, item.path);
+              }}
+            >
+              <ListItemText primary={item.name} />
+            </ListItemButton>
+          );
+        })}
       </List>
     </div>
   );
