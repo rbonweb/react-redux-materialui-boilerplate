@@ -62,7 +62,7 @@ const Sidebar = () => {
       <Toolbar
         sx={{ display: "flex", justifyContent: "center", alignItems: "center" }}
       >
-        <img src="https://dummyimage.com/200x50/3f51b5/fff" alt="Logo" />
+        <img src="https://dummyimage.com/200x50/90caf9/fff" alt="Logo" />
       </Toolbar>
       <Divider />
       <List component="nav">

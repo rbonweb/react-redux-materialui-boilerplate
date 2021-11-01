@@ -6,7 +6,7 @@ import { Helmet } from "react-helmet";
 const Meta = ({ title }) => (
   <Helmet>
     <title>
-      {title && title + "|"} React + Redux Toolkit + Material UI Boilerplate
+      {title && title + " |"} React + Redux Toolkit + Material UI Boilerplate
     </title>
   </Helmet>
 );
