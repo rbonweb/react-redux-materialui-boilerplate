@@ -11,11 +11,11 @@ import Tooltip from "@mui/material/Tooltip";
 import PersonAdd from "@mui/icons-material/PersonAdd";
 import Settings from "@mui/icons-material/Settings";
 import Logout from "@mui/icons-material/Logout";
-import { authContext } from "../../hooks/authContext";
+import { useAuth } from "../../hooks/authContext";
 import { useNavigate } from "react-router-dom";
 
-export default function AccountMenu() {
-  const auth = React.useContext(authContext);
+const AccountMenu = () => {
+  const auth = useAuth();
   let navigate = useNavigate();
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
@@ -103,4 +103,6 @@ export default function AccountMenu() {
       </Menu>
     </React.Fragment>
   );
-}
+};
+
+export default AccountMenu;

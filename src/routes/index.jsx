@@ -1,13 +1,9 @@
 import React from "react";
 import { useRoutes } from "react-router-dom";
-import MainRoutes from "./MainRoutes";
-import AuthenticationRoutes from "./AuthenticationRoutes";
 import config from "../config";
-import { useContext } from "react";
-import { authContext } from "../hooks/authContext";
 import { AuthenticatedRoutes } from "./AuthenticatedRoutes";
-
-// ==============================|| ROUTING RENDER ||============================== //
+import { AuthenticationRoutes } from "./AuthenticationRoutes";
+import PublicRoutes from "./PublicRoutes";
 
 const NotFound = () => "404 Not Found";
 
@@ -16,16 +12,16 @@ const notFoundRoutes = {
   element: <NotFound />,
 };
 
-export default function ThemeRoutes() {
-  const auth = useContext(authContext);
-  if (auth.authenticated) {
-    return useRoutes(
-      [MainRoutes, ...AuthenticatedRoutes, notFoundRoutes],
-      config.basename
-    );
-  }
+// ==============================|| ROUTING RENDER ||============================== //
+
+export default function AppRoutes() {
   return useRoutes(
-    [MainRoutes, AuthenticationRoutes, notFoundRoutes],
+    [
+      PublicRoutes,
+      ...AuthenticationRoutes,
+      ...AuthenticatedRoutes,
+      notFoundRoutes,
+    ],
     config.basename
   );
 }

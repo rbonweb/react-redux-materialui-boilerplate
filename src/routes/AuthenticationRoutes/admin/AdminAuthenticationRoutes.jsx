@@ -1,13 +1,15 @@
 import React from "react";
 import { lazy } from "react";
-import MinimalLayout from "../layouts/MinimalLayout";
-import Loadable from "../components/Loadable";
+import Loadable from "../../../components/Loadable";
+import MinimalLayout from "../../../layouts/MinimalLayout";
 
-const SignIn = Loadable(lazy(() => import("../views/authentication/SignIn")));
+const SignIn = Loadable(
+  lazy(() => import("../../../views/authentication/SignIn"))
+);
 
 // ==============================|| AUTHENTICATION ROUTING ||============================== //
 
-const AuthenticationRoutes = {
+const AdminAuthenticationRoutes = {
   path: "/",
   element: <MinimalLayout />,
   children: [
@@ -18,4 +20,4 @@ const AuthenticationRoutes = {
   ],
 };
 
-export default AuthenticationRoutes;
+export default AdminAuthenticationRoutes;

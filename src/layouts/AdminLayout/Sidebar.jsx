@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import {
@@ -9,8 +8,9 @@ import {
   ListItemText,
   Toolbar,
 } from "@mui/material";
-import AdminSideBarRoutes from "../../routes/AuthenticatedRoutes/AdminSideBarRoutes";
+import AdminSideBarRoutes from "../../routes/AuthenticatedRoutes/admin/AdminSideBarRoutes";
 import { ExpandLess, ExpandMore } from "@mui/icons-material";
+import { PropTypes } from "prop-types";
 
 const CollapsedList = ({ item, selectedIndex, handleListItemClick }) => {
   let navigate = useNavigate();
@@ -89,6 +89,12 @@ const Sidebar = () => {
       </List>
     </div>
   );
+};
+
+CollapsedList.propTypes = {
+  item: PropTypes.object,
+  selectedIndex: PropTypes.string,
+  handleListItemClick: PropTypes.func,
 };
 
 export default Sidebar;

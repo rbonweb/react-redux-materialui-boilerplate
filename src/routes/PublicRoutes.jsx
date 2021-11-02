@@ -6,7 +6,7 @@ const Welcome = Loadable(lazy(() => import("../views/Welcome")));
 
 // ==============================|| MAIN ROUTING ||============================== //
 
-const MainRoutes = {
+const PublicRoutes = {
   path: "/",
   element: <MainLayout />,
   children: [
@@ -17,4 +17,4 @@ const MainRoutes = {
   ],
 };
 
-export default MainRoutes;
+export default PublicRoutes;

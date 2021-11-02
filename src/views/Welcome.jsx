@@ -1,6 +1,6 @@
 import { Container, Typography } from "@mui/material";
 import React from "react";
-import Meta from "../components/Meta";
+import Meta from "components/Meta";
 
 export default function Welcome() {
   return (
@@ -11,7 +11,7 @@ export default function Welcome() {
           Welcome
         </Typography>
         <Typography align="center" variant="h6" component="h2">
-          Inherited from Mail Layout
+          Inherited from Main Layout
         </Typography>
       </Container>
     </>

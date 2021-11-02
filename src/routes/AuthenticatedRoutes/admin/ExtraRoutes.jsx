@@ -1,9 +1,12 @@
 import React, { lazy } from "react";
-import Loadable from "../../components/Loadable";
-import AdminLayout from "../../layouts/AdminLayout";
-import Blogs from "../../views/admin/Blogs";
+import Loadable from "../../../components/Loadable";
+import RequireAuth from "../../../components/auth/RequireAuth";
+import AdminLayout from "../../../layouts/AdminLayout";
+import Blogs from "../../../views/admin/Blogs";
 
-const Dashboard = Loadable(lazy(() => import("../../views/admin/Dashboard")));
+const Dashboard = Loadable(
+  lazy(() => import("../../../views/admin/Dashboard"))
+);
 
 // ==============================|| AUTHENTICATION ROUTING ||============================== //
 
@@ -13,7 +16,7 @@ const ExtraRoutes = {
   children: [
     {
       path: "/as/admin/dashboard",
-      element: <Dashboard />,
+      element: <RequireAuth component={<Dashboard />} />,
     },
     {
       path: "/as/admin/blogs",

@@ -7,7 +7,7 @@ import { useFormik } from "formik";
 import * as yup from "yup";
 import { Typography } from "@mui/material";
 import Meta from "../../components/Meta";
-import { authContext } from "../../hooks/authContext";
+import { useAuth } from "../../hooks/authContext";
 import { useNavigate } from "react-router-dom";
 
 const validationSchema = yup.object({
@@ -22,7 +22,7 @@ const validationSchema = yup.object({
 });
 
 export default function SignIn() {
-  const auth = React.useContext(authContext);
+  const auth = useAuth();
   let navigate = useNavigate();
 
   const formik = useFormik({
