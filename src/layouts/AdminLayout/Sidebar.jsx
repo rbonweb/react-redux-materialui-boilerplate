@@ -14,7 +14,9 @@ import { PropTypes } from "prop-types";
 
 const CollapsedList = ({ item, selectedIndex, handleListItemClick }) => {
   let navigate = useNavigate();
-  const [open, setOpen] = React.useState(false);
+  const [open, setOpen] = React.useState(
+    window.location.pathname.includes(item.path)
+  );
 
   const handleClick = () => {
     setOpen(!open);
@@ -51,7 +53,9 @@ const CollapsedList = ({ item, selectedIndex, handleListItemClick }) => {
 
 const Sidebar = () => {
   let navigate = useNavigate();
-  const [selectedIndex, setSelectedIndex] = React.useState(1);
+  const [selectedIndex, setSelectedIndex] = React.useState(
+    window.location.pathname
+  );
 
   const handleListItemClick = (event, index) => {
     setSelectedIndex(index);
@@ -69,13 +73,14 @@ const Sidebar = () => {
         {AdminSideBarRoutes.children.map((item) => {
           return item.children ? (
             <CollapsedList
+              key={item.path}
               item={item}
               selectedIndex={selectedIndex}
               handleListItemClick={handleListItemClick}
             />
           ) : (
             <ListItemButton
-              key={item.path}
+              key={item.name}
               selected={selectedIndex === item.path}
               onClick={(event) => {
                 navigate(item.path);

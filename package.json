@@ -9,20 +9,19 @@
     "eject": "react-scripts eject"
   },
   "dependencies": {
-    "@emotion/react": "latest",
-    "@emotion/styled": "latest",
-    "@mui/icons-material": "^5.0.5",
-    "@mui/material": "latest",
+    "@emotion/react": "^11.5.0",
+    "@emotion/styled": "^11.3.0",
+    "@mui/icons-material": "^5.1.0",
+    "@mui/material": "^5.1.0",
     "@reduxjs/toolkit": "^1.6.2",
     "formik": "^2.2.9",
-    "history": "^5.0.1",
+    "history": "^5.1.0",
     "prop-types": "^15.7.2",
-    "react": "latest",
-    "react-dom": "latest",
+    "react-dom": "^17.0.2",
     "react-helmet": "^6.1.0",
     "react-redux": "^7.2.6",
-    "react-router-dom": "^6.0.0-beta.8",
-    "react-scripts": "latest",
+    "react-router-dom": "^6.0.1",
+    "react-scripts": "^4.0.3",
     "yup": "^0.32.11"
   },
   "browserslist": {

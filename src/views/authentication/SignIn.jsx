@@ -8,7 +8,7 @@ import * as yup from "yup";
 import { Typography } from "@mui/material";
 import Meta from "../../components/Meta";
 import { useAuth } from "../../hooks/authContext";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 
 const validationSchema = yup.object({
   email: yup
@@ -24,6 +24,8 @@ const validationSchema = yup.object({
 export default function SignIn() {
   const auth = useAuth();
   let navigate = useNavigate();
+  let location = useLocation();
+  let from = location.state?.from?.pathname || "/admin/dashboard";
 
   const formik = useFormik({
     initialValues: {
@@ -34,7 +36,7 @@ export default function SignIn() {
     onSubmit: (values) => {
       alert(JSON.stringify(values, null, 2));
       auth.login();
-      navigate("/admin/dashboard");
+      navigate(from, { replace: true });
     },
   });
 

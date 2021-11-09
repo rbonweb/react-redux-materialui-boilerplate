@@ -5,14 +5,14 @@ const theme = createTheme({
   palette: {
     mode: "light",
     primary: {
-      main: "#90caf9",
-      dark: "#42a5f5",
-      light: "#e3f2fd",
+      main: "#33a0cc",
+      dark: "#00719b",
+      light: "#70d1ff",
     },
     secondary: {
-      main: "#ce93d8",
-      dark: "#ab47bc",
-      light: "#f3e5f5",
+      main: "#ffb564",
+      dark: "#c88536",
+      light: "#ffe794",
     },
     error: {
       light: "#e57373",
@@ -71,17 +71,6 @@ const theme = createTheme({
   shape: {
     borderRadius: 6,
   },
-  components: {
-    MuiOutlinedInput: {
-      styleOverrides: {
-        root: {
-          padding: 0,
-          "& .MuiOutlinedInput-input": {
-            padding: "10px 15px",
-          },
-        },
-      },
-    },
-  },
+  components: {},
 });
 export default theme;
